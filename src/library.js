@@ -1,5 +1,5 @@
 const parseInput = function(userInput){
-    let parsedInput = {type : 'n', lines : 10, fileNames : []};
+    let parsedInput = {bytes : undefined, lines : 10, fileNames : []};
     parsedInput.fileNames = parsedInput.fileNames.concat(userInput);
     return parsedInput;
 }
