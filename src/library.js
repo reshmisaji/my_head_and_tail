@@ -10,4 +10,5 @@ const getContents = function(fileName) {
   return fs.readFileSync(fileName, "utf-8");
 };
 
+
 module.exports = { parseInput, getContents };

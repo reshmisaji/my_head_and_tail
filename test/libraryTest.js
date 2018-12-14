@@ -1,5 +1,5 @@
 const { deepEqual } = require("assert");
-const { parseInput } = require("../src/library.js");
+const { parseInput, getContents } = require("../src/library.js");
 
 describe("parseInput", function() {
   describe("Passing only the file names", function() {
@@ -26,5 +26,11 @@ describe("parseInput", function() {
         fileNames: ["example1.js", "example2.js"]
       });
     });
+  });
+});
+
+describe("getContents", function() {
+  it("should return the contents of the given file in a string if the file exists", function() {
+      deepEqual(getContents('./appData/sample.js'),'1\n')
   });
 });
