@@ -30,7 +30,11 @@ describe("parseInput", function() {
 });
 
 describe("getContents", function() {
-  it("should return the contents of the given file in a string if the file exists", function() {
+  it("should return the contents of the given file path in a string if the file exists", function() {
       deepEqual(getContents('./appData/sample.js'),'1\n')
+  });
+
+  it('should return "File not found" when we give a file path which does not exist', function() {
+      deepEqual(getContents('./sample.js'),'File not found')
   });
 });
