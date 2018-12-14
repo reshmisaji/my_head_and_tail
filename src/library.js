@@ -7,8 +7,10 @@ const parseInput = function(userInput) {
 };
 
 const getContents = function(fileName) {
-  return fs.readFileSync(fileName, "utf-8");
+  if (fs.existsSync(fileName)) {
+    return fs.readFileSync(fileName, "utf-8");
+  }
+  return 'File not found'
 };
-
 
 module.exports = { parseInput, getContents };
