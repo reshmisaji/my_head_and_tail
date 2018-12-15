@@ -1,4 +1,3 @@
-const fs = require("fs");
 
 const parseInput = function(userInput) {
   let parsedInput = { bytes: undefined, lines: 10, fileNames: [] };
@@ -6,9 +5,10 @@ const parseInput = function(userInput) {
   return parsedInput;
 };
 
-const getContents = function(fileName) {
+const getContents = function(fs,fileName,numberOfLines) {
   if (fs.existsSync(fileName)) {
-    return fs.readFileSync(fileName, "utf-8");
+    let contents = fs.readFileSync(fileName, "utf-8");
+    return getUpperPart(contents,numberOfLines);
   }
   return 'File not found'
 };
