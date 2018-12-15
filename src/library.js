@@ -13,4 +13,10 @@ const getContents = function(fileName) {
   return 'File not found'
 };
 
-module.exports = { parseInput, getContents };
+const getUpperPart = function(contents,numberOfLines) {
+    let data = contents.trim();
+    data = data.split("\n").slice(0,numberOfLines);
+    return data;
+}
+
+module.exports = { parseInput, getContents,getUpperPart };

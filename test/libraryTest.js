@@ -1,5 +1,5 @@
 const { deepEqual } = require("assert");
-const { parseInput, getContents } = require("../src/library.js");
+const { parseInput, getContents ,getUpperPart } = require("../src/library.js");
 
 describe("parseInput", function() {
   describe("Passing only the file names", function() {
@@ -37,4 +37,19 @@ describe("getContents", function() {
   it('should return "File not found" when we give a file path which does not exist', function() {
       deepEqual(getContents('./sample.js'),'File not found')
   });
+});
+
+describe('getUpperPart', function() {
+    it('should return an array with empty string when given an empty string ', function() {
+        deepEqual(getUpperPart('',1),['']);
+    });
+
+    it('should return an empty array when given line number as 0', function() {
+        deepEqual(getUpperPart('a\n ',0),[]);
+    });
+
+    it('should return an array with the 1 line when given one lined content', function() {
+        deepEqual(getUpperPart('a\n ',1),['a']);
+    });
+    
 });
